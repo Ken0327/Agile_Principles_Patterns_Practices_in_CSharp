@@ -31,7 +31,7 @@ public void TestMove()
 
 ## 2. 測試促使模組之間隔離
 
-![Test_1]](./test_1.png "Test.md")
+![Test_1](test_1.png "Test.md")
 >耦合在一起的薪水支付應用模型
 
 -  可能問題
@@ -40,7 +40,7 @@ public void TestMove()
 
 - Mock Object 的設計
 
-![Test_1]](./test_2.png "Test.md")
+![Test_1](test_2.png "Test.md")
 > 使用Mock Object 來測試，解除了耦合的薪水支付模型
 
 - 透過Mock Object 作為介面的替身使用
