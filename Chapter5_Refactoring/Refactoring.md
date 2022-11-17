@@ -218,7 +218,7 @@ public class PrimeGenerator
 }
 ````
 
-Listing 5-7 PrimeGenerator.cs (最終版)
+Listing 5-7 GeneratePrimes.cs (最終版)
 
 ```csharp
 /// <remark> 
@@ -231,13 +231,13 @@ Listing 5-7 PrimeGenerator.cs (最終版)
 
 using System;
 
-public class PrimeGenerator
+public class GeneratePrimes
 {
-    private static bool[] crossOut;
+    private static bool[] crossedOut;
     private static int[] result;
-    
+
     public static int[] GeneratePrimeNumbers(int maxValue)
-    {       
+    {
         if (maxValue < 2)
         {
             return new int[0];
@@ -253,9 +253,9 @@ public class PrimeGenerator
 
     private static void UncrossIntegersUpTo(int maxValue)
     {
-        crossOut = new bool[maxValue + 1];
-        for (int i = 2; i < crossOut.Length; i++)
-            crossOut[i] = false;
+        crossedOut = new bool[maxValue + 1];
+        for (int i = 2; i < crossedOut.Length; i++)
+            crossedOut[i] = false;
     }
 
     private static void PutUncrossedIntegersIntoResult()
@@ -271,7 +271,7 @@ public class PrimeGenerator
     private static int NumberOfUncrossedIntegers()
     {
         int count = 0;
-        for (int i = 2; i < crossedOut.Length; i ++)
+        for (int i = 2; i < crossedOut.Length; i++)
         {
             if (NotCrossed(i))
                 count++; // 累加count
@@ -279,10 +279,10 @@ public class PrimeGenerator
         return count;
     }
 
-    private static int CrossOutMultiples()
+    private static void CrossOutMultiples()
     {
         int limit = DetermineIterationLimit();
-        for (int i = 2; i <= limit; i ++)
+        for (int i = 2; i <= limit; i++)
         {
             if (NotCrossed(i))
                 CrossOutputMultiplesOf(i);
@@ -293,14 +293,14 @@ public class PrimeGenerator
     {
         // 陣列中的每個倍數都有一個小於或等於陣列大小平方根的質因數
         // 因此我們不用劃掉那些比這個平方根還大的倍數
-        double iterationLimit = Math.Sqrt(crossOut.Length);
-        return (int) iterationLimit;
+        double iterationLimit = Math.Sqrt(crossedOut.Length);
+        return (int)iterationLimit;
     }
 
-    private static void CrossOutMultiplesOf(int i)
+    private static void CrossOutputMultiplesOf(int i)
     {
-        for (int multiple = 2 * i; multiple < crossOut.Length; multiple += i)
-            crossOut[Multiple] = true;
+        for (int multiple = 2 * i; multiple < crossedOut.Length; multiple += i)
+            crossedOut[multiple] = true;
     }
 
     private static bool NotCrossed(int i)
