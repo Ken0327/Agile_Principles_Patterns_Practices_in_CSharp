@@ -6,13 +6,13 @@ Agile Design
 ## 1. 設計臭味 Code Smell
 
 - 設計臭味
- * 僵化性 (Rigidity)
- * 脆弱性 (Fragility)
- * 頑固性 (Immobility)
- * 黏滯性 (Viscosity)
- * 不必要的複雜性 (Needless complexity)
- * 不必要得重複 (Needless repetition)
- * 晦澀姓 (Opacity)
+	* 僵化性 (Rigidity)
+	* 脆弱性 (Fragility)
+	* 頑固性 (Immobility)
+	* 黏滯性 (Viscosity)
+	* 不必要的複雜性 (Needless complexity)
+	* 不必要得重複 (Needless repetition)
+	* 晦澀姓 (Opacity)
 1. 僵化性 (Rigidity)
 	* 僵化性指難以對軟體進行修改，如果單一修改會導致有依賴關係的模組有異動，那設計就是僵化的。
 2. 脆弱性 (Fragility) - 在進行一個修改時，可能會導致程式的許多地方出現問題。
@@ -28,6 +28,7 @@ Agile Design
 - 團隊幾乎不進行預先設計，因此，不需要一個成熟的初始設計。反之，他們傾向於讓系統設計盡可能的乾淨和簡單，並使用許多單元測試和驗收程式作為支援。 
 
 ## 3. 範例 -Copy程式
+![Agile](7_1.png "Agile.md")
 
 Listing 7-1 Copy 程式
 ```csharp
