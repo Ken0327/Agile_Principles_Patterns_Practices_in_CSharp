@@ -46,10 +46,10 @@ public class Shape
 }
 ```
 
-* 存在使用Rectange物件的函式，無法正確的操作Square物件。對於這些函式來說，Square不能替換Rectange，故可知這樣是違反LSP的。
+* 使用Rectangle物件的函式，無法正確的操作Square物件。對於這些函式來說，Square不能替換Rectangle，故可知這樣是違反LSP的。
 
 ``` csharp
-public class Rectange
+public class Rectangle
 {
     private Point topLeft;
     private double width;
@@ -195,7 +195,7 @@ public class LineSegment :LinearObject
 }
 ```
 
-## 3. 啟發是規則和習慣用法
+## 3. 啟發式規則和習慣用法
 * 以某種方式從基底類別中去除功能的衍生類別
 * 完成的功能少於基底類別的衍生類別，通常是不能替換基底類別的，因為這樣就違反了LSP
 * 在衍生類別中存在退化函式並不總是代表違反了LSP，但是當出現這種情況時，還是值得關注的。
@@ -219,7 +219,7 @@ public class Derived : base
 
 	
 ## 4. 總結
-* OCP是OOP中許多主張的核，如果能有效地應用這個原則，應用程式就會具有更強的可維護性、在使用性及強固性。
+* OCP是OOP中許多主張的核心，如果能有效地應用這個原則，應用程式就會具有更強的可維護性、在使用性及強固性。
 * 透過 LSP實現子型態的可替換性，才使得使用基底類別型態表示的模組，在無需修改的情況下就得以擴展。
 * IS-A的涵義比較廣泛，較無法作為子型態的定義。
 * 子型態的正確定義應該是可替換的，這裡的可替換性可以透過顯示或隱式的契約來定義。
