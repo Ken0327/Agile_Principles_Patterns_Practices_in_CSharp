@@ -1,4 +1,4 @@
-OCP (Tthe Open-Closed Principle) : 開放-封閉原則
+OCP (The Open-Closed Principle) : 開放-封閉原則
 ======
 > 軟體實體(類別、模組、函式等等)應該是可擴展的，但不可修改。
 
