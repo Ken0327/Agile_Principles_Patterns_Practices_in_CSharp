@@ -23,7 +23,12 @@ OCP (Tthe Open-Closed Principle) : 開放-封閉原則
 Listing 9-1 Square/Circle問題的程式化解決方案
 ![OCP](Listing9-1.png "OCP.md")
 
+* 違反OCP
+DrawAllShapes函式不符合OCP，因為他對於加入新的形狀型態並非封閉的。每增加一種新的形狀型態，都必須更改這個函式。
+
+
 Listing 9-2 Square/Circle問題的物件導向設計(OOD)解決方案
+* 遵循OCP
 展示一個符合OCP的解決方案。在這個方案中，我們撰寫了一個名為Shape的抽象類別。這個抽象類別僅有一個名為Draw的抽象方法。
 
 ```csharp
@@ -55,6 +60,12 @@ public void DrawAllShapes(IList shapes)
 }
 ```
 
+
+Q: 如果我們要求所有的Circle必須在Square之前繪製?
+那麼Listing 9-2當中的DarwAllShapes函式無法對這種變化達到封閉效果。我們必須修改DarwAllShapes的實作，使他先掃描串列中所有的Circle，然後再掃描所有的Square。
+
+* 使用抽象獲得顯式封閉
+IComparable介面只有一個方法:CompareTo
 
 Listing 9-3 繼承了IComparable介面的Shape
 
@@ -91,9 +102,12 @@ public class Circle : Shape
 }
 ```
 
-Listing 9-6 表格驅動的形狀類別排序機制
+顯然這函式以及所有Shape的衍生類別中的CompareTo函式都不符合OCP。每次建立一個新的Shape的衍生類別時，所有的CompareTo()函式都需要修改。
+
 * 使用【資料驅動】的方式獲取封閉性
     如果我們要使Shape的各個衍生類別間互不知曉，可以採用表格驅動的解決方案。
+
+Listing 9-6 表格驅動的形狀類別排序機制
 
 ```csharp
 ///<sumaary>
