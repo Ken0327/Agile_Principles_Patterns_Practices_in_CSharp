@@ -118,7 +118,7 @@ namespace TreeMap
 - 小箭頭表示在鏈上傳遞的訊息
 - 帶點的順序號碼表示呼叫的層次結構。TreeMap.Add(1)呼叫了TreeMapNode.Add函式(1.1)
 
-## 5. 狀態圖 (status diagram)
+## 5. 狀態圖 (state diagram)
 - 對於理解系統的行為非常有用
 - 可以研究系統在未預料到的情況下，該如何動作。
 能夠全面地表達有限狀態機(finite state machine: FSM)
